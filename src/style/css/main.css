@@ -236,7 +236,11 @@ nav {
     flex-wrap: wrap;
     justify-content: flex-end;
     flex: 1;
-    gap: 15px;
+    gap: 5px;
+}
+
+#nav-link-3 {
+    display: none;
 }
 
 .nav-link {

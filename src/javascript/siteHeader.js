@@ -31,17 +31,17 @@ export function generateHeader() {
  // Array with links and endpoints
  const pages = [
   {
-   id: 1,
+   id: "nav-link-1",
    name: "Home",
    url: "/index.html",
   },
   {
-   id: 2,
+   id: "nav-link-2",
    name: "Login",
    url: "/",
   },
   {
-   id: 3,
+   id: "nav-link-3",
    name: "Profile",
    url: "/",
   },
@@ -51,6 +51,7 @@ export function generateHeader() {
   const navLink = document.createElement("a");
 
   navLink.classList.add("nav-link");
+  navLink.id += `${pages[i].id}`
   navLink.innerText += `${pages[i].name}`;
   navLink.href += `${pages[i].url}`;
   nav.append(navLink);
