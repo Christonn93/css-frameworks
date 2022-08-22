@@ -1,0 +1,22 @@
+{
+  "name": "css-frameworks",
+  "version": "1.0.0",
+  "description": "Noroff assignment on learning how to use CSS framework. read readme file for more information",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Christonn93/css-frameworks.git"
+  },
+  "author": "Christopher Tønnesland",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Christonn93/css-frameworks/issues"
+  },
+  "homepage": "https://github.com/Christonn93/css-frameworks#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.0"
+  }
+}
