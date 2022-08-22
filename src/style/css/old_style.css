@@ -1,0 +1,979 @@
+/* ======================
+Project name: 
+Version: 0.0.1
+Author: Christopher Tønnesland
+
+Style list:
+
+1. GLOBAL STYLE
+
+2. TYPOGRAPHY
+
+3. FEEDBACK HANDLING
+   
+4.  LAYOUT
+
+5. UTILITIES
+
+6. Media Queries 
+   
+====================== */
+
+/* ======================
+    1. GLOBAL STYLE
+====================== */
+
+/* ========== Root ========== */
+
+:root {
+    /* === Root font sizing === */
+    --fontSize-default: clamp(16px, 2vw, 24px);
+    --fontSize-x-small: clamp(14px, 1vw, 18px);
+    --fontSize-small: clamp(12px, 1.5vw, 18px);
+    --fontSize-medium: clamp(24px, 3vw, 36px);
+    --fontSize-large: clamp(38px, 4vw, 55px);
+    --fontSize-x-large: clamp(50px, 5vw, 68px);
+
+    /* === Root font === */
+    --font-heading: ;
+    --font-body: ;
+    --font-button: ;
+    --font-link: ;
+
+    /* === Shadows === */
+    --box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5), 0px 0px 10px rgba(0, 0, 0, 0.8);
+    --box-shadow-2: 0px 4px 10px 2px rgba(0, 0, 0, 0.5),
+        0px 4px 10px 0px rgba(0, 0, 0, 0.8);
+    --text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+        0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    /* === Colors === */
+    --main-clr: #26a66a;
+    --sec-clr: #fc9a67;
+
+    --text-clr: ;
+    --link-clr: ;
+
+    --main-bg-clr: ;
+
+    /* ===  Feedback handling ===  */
+    --clr-prim: hsla(195, 100%, 40%, 0.35);
+    --prim-bor: var(--border) #0099cc;
+
+    --clr-warn: hsla(32, 100%, 50%, 0.35);
+    --warn-bor: var(--border) #ff8800;
+
+    --clr-err: hsla(0, 100%, 40%, 0.35);
+    --err-bor: var(--border) #cc0000;
+
+    --clr-ok: hsla(144, 100%, 25%, 0.35);
+    --ok-bor: var(--border) #007e33;
+
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* ========== HTML ========== */
+
+/* 
+  
+  Adding style on elements without any spesific classname or id
+  
+  */
+
+/* ========== Body ========== */
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+
+
+    color: var(--text-clr);
+    font-size: var(--fontSize-default);
+    font-family: var(--font-heading);
+}
+
+/* ========== Section ========== */
+
+section {
+    display: flex;
+    justify-content: space-around;
+    gap: 25px;
+
+    padding: 1.75rem;
+}
+
+/* ========== List ========== */
+
+ol,
+ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 5px;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+li {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    flex: 1 1 100%;
+    margin: 5px 0;
+
+    font-size: var(--fontSize-small);
+}
+
+/* ======================
+      2. TYPOGRAPHY
+  ====================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    color: var(--main-clr);
+    text-shadow: var(--text-shadow);
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: var(--fontSize-x-large);
+}
+
+h2 {
+    font-size: var(--fontSize-large);
+}
+
+h3 {
+    font-size: var(--fontSize-medium);
+}
+
+a {
+    font-size: var(--fontSize-small);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* ======================
+    3. FEEDBACK HANDLING
+====================== */
+
+.feedback-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex: 1;
+    align-content: center;
+
+    margin: 10px auto;
+    padding: var(--padding);
+
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5),
+    0 0px 10px rgba(0, 0, 0, 0.8);
+}
+
+.alert {
+    border: var(--prim-bor);
+    background-color: var(--clr-prim);
+}
+
+.warning {
+    border: var(--warn-bor);
+    background-color: var(--clr-warn);
+}
+
+.error {
+    border: var(--err-bor);
+    background-color: var(--clr-err);
+}
+
+.success {
+    border: var(--ok-bor);
+    background-color: var(--clr-ok);
+}
+
+/* ======================
+      4. LAYOUT
+  ====================== */
+
+/* ========== Header & Navigation layout ========== */
+
+.page-header {
+    padding: 15px;
+    width: 100%;
+}
+
+.header-layout {
+    display: flex;
+}
+
+.brand-name {
+    display: flex;
+}
+
+nav {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    flex: 1;
+    gap: 5px;
+}
+
+#nav-link-3 {
+    display: none;
+}
+
+.nav-link {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+
+    padding: 0.5rem 1rem;
+    margin: 0;
+
+    font-family: var(--ff-btn-link);
+    color: var(--para-clr);
+
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    cursor: pointer;
+
+    transition: background 250ms ease-in-out,
+        transform 150ms ease;
+}
+
+.nav-link:hover {
+    border: 1px solid var(--border-clr);
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5),
+        0 0px 10px rgba(0, 0, 0, 0.8);
+}
+
+.active-link {
+    border: 1px solid var(--border-clr);
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5),
+        0 0px 10px rgba(0, 0, 0, 0.8);
+}
+
+.hamburger {
+    display: none;
+    justify-content: center;
+    align-content: center;
+
+    padding: 0.5rem 1rem;
+    margin: 0;
+
+    color: var(--para-clr);
+
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    cursor: pointer;
+
+    transition: background 250ms ease-in-out,
+        transform 150ms ease;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--copy-clr);
+}
+
+.skip-nav {
+    display: block;
+    position: absolute;
+    transform: translateY(-120px);
+    transition: 360ms ease-in;
+    background-color: black;
+    color: #EF3D34;
+    padding: .72rem;
+    width: fit-content;
+    height: fit-content;
+    border-radius: .25rem;
+    text-align: center;
+}
+
+.skip-nav:hover {
+    background-color: black;
+    color: red;
+    padding: .72rem;
+    width: fit-content;
+    height: fit-content;
+    border-radius: .25rem;
+    text-align: center;
+}
+
+.skip-nav:focus {
+    transform: translateY(0px);
+}
+
+/* ========== Button ========== */
+
+button {
+    border: 0;
+    background-color: transparent;
+    max-height: fit-content;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    padding: 10px 20px;
+    margin: 0;
+
+    border-radius: 0.5rem;
+    outline: 0.5px solid var(--sec-clr);
+    outline-offset: 1px;
+    cursor: pointer;
+
+    font-size: clamp(16px, 2vw, 18px);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.15px;
+
+    background-color: transparent;
+
+    transition: background 250ms ease-in-out, transform 150ms ease;
+}
+
+.btn:hover {
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5), 0 0px 10px rgba(0, 0, 0, 0.8);
+    outline: 0.5px solid var(--border-clr);
+    outline-offset: -1px;
+}
+
+.btn:focus {
+    outline: inset 1px solid var(--border-clr);
+    outline-offset: -1px;
+}
+
+.btn:active {
+    transform: scale(0.99);
+}
+
+/* ========== Sidebar ========== */
+
+/* ======================
+      5. MEDIA, IMAGES & ICONS
+  ====================== */
+
+/* ========== Media ========== */
+
+/* ========== Images ========== */
+
+.image-small {
+    width: 50px;
+}
+
+/* ========== Icons ========== */
+
+/* ======================
+      5. UTILITIES
+  ====================== */
+
+/* ========== re usable ========== */
+
+.hidden {
+    display: none;
+}
+
+/* ======================
+      6. MEDIA QUERIES
+  ====================== */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .layout-container {
+        flex-direction: column;
+    }
+
+    .content-container {
+        grid-auto-rows: auto;
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+    /* ========== Body ========== */
+
+    body {}
+
+    /* ========== Section ========== */
+
+    section {}
+
+    /* ========== List ========== */
+
+    ol,
+    ul {}
+
+    li {}
+
+    /* ======================
+      2. TYPOGRAPHY
+  ====================== */
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {}
+
+    h1 {}
+
+    h2 {}
+
+    h3 {}
+
+    a {}
+
+    /* ======================
+      3. LAYOUT
+  ====================== */
+
+    /* ========== Layout (Grid-based) ========== */
+
+    .layout {}
+
+    .main {}
+
+    .sidebar {}
+
+    /* ========== Header & Navigation layout ========== */
+
+    .header-layout {}
+
+    .main-navigation {}
+
+    .nav-tab {}
+
+    .nav-tab.active {}
+
+    /* ========== Content Layout ========== */
+
+    .container-layout {}
+
+    .container {}
+
+    .box {}
+
+    /* ========== Card ========== */
+
+    .card-container {}
+
+    .card {}
+
+    .card-body {}
+
+    .card:hover {}
+
+    .card:hover>.card-body {}
+
+    /* ========== Link ========== */
+
+    .contact-link {}
+
+    /* ========== Button ========== */
+
+    button {}
+
+    .btn {}
+
+    .btn:hover {}
+
+    .btn:focus {}
+
+    .btn:active {}
+
+    /* ========== Sidebar ========== */
+
+    .sidebar-container {}
+
+    .social-container {}
+
+    /* ======================
+      5. MEDIA, IMAGES & ICONS
+  ====================== */
+
+    /* ========== Media ========== */
+
+    /* ========== Images ========== */
+
+    .image {}
+
+    /* ========== Icons ========== */
+
+    .large-icon {}
+
+    .icon-box {}
+
+    .tool-icon-container {}
+
+    .social-icon,
+    .tool-icon {}
+
+    .tool-icon:hover,
+    .social-icon:hover {}
+
+    .tool-box .icon-box:hover>.tool-info,
+    .social-container .icon-box:hover>.link-info {}
+
+    /* ======================
+      5. UTILITES
+  ====================== */
+
+    .hidden {}
+
+    /* ========== Tooltip ========== */
+
+    .tool-info,
+    .link-info {}
+
+    .tool-info {}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    /* ========== Body ========== */
+
+    body {}
+
+    /* ========== Section ========== */
+
+    section {}
+
+    /* ========== List ========== */
+
+    ol,
+    ul {}
+
+    li {}
+
+    /* ======================
+      2. TYPOGRAPHY
+  ====================== */
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {}
+
+    h1 {}
+
+    h2 {}
+
+    h3 {}
+
+    a {}
+
+    /* ======================
+      3. LAYOUT
+  ====================== */
+
+    /* ========== Layout (Grid-based) ========== */
+
+    .layout {}
+
+    .main {}
+
+    .sidebar {}
+
+    /* ========== Header & Navigation layout ========== */
+
+    .header-layout {}
+
+    .main-navigation {}
+
+    .nav-tab {}
+
+    .nav-tab.active {}
+
+    /* ========== Content Layout ========== */
+
+    .container-layout {}
+
+    .container {}
+
+    .box {}
+
+    /* ========== Card ========== */
+
+    .card-container {}
+
+    .card {}
+
+    .card-body {}
+
+    .card:hover {}
+
+    .card:hover>.card-body {}
+
+    /* ========== Link ========== */
+
+    .contact-link {}
+
+    /* ========== Button ========== */
+
+    button {}
+
+    .btn {}
+
+    .btn:hover {}
+
+    .btn:focus {}
+
+    .btn:active {}
+
+    /* ========== Sidebar ========== */
+
+    .sidebar-container {}
+
+    .social-container {}
+
+    /* ======================
+      5. MEDIA, IMAGES & ICONS
+  ====================== */
+
+    /* ========== Media ========== */
+
+    /* ========== Images ========== */
+
+    .image {}
+
+    /* ========== Icons ========== */
+
+    .large-icon {}
+
+    .icon-box {}
+
+    .tool-icon-container {}
+
+    .social-icon,
+    .tool-icon {}
+
+    .tool-icon:hover,
+    .social-icon:hover {}
+
+    .tool-box .icon-box:hover>.tool-info,
+    .social-container .icon-box:hover>.link-info {}
+
+    /* ======================
+      5. UTILITES
+  ====================== */
+
+    .hidden {}
+
+    /* ========== Tooltip ========== */
+
+    .tool-info,
+    .link-info {}
+
+    .tool-info {}
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    /* ========== Body ========== */
+
+    body {}
+
+    /* ========== Section ========== */
+
+    section {}
+
+    /* ========== List ========== */
+
+    ol,
+    ul {}
+
+    li {}
+
+    /* ======================
+      2. TYPOGRAPHY
+  ====================== */
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {}
+
+    h1 {}
+
+    h2 {}
+
+    h3 {}
+
+    a {}
+
+    /* ======================
+      3. LAYOUT
+  ====================== */
+
+    /* ========== Layout (Grid-based) ========== */
+
+    .layout {}
+
+    .main {}
+
+    .sidebar {}
+
+    /* ========== Header & Navigation layout ========== */
+
+    .header-layout {}
+
+    .main-navigation {}
+
+    .nav-tab {}
+
+    .nav-tab.active {}
+
+    /* ========== Content Layout ========== */
+
+    .container-layout {}
+
+    .container {}
+
+    .box {}
+
+    /* ========== Card ========== */
+
+    .card-container {}
+
+    .card {}
+
+    .card-body {}
+
+    .card:hover {}
+
+    .card:hover>.card-body {}
+
+    /* ========== Link ========== */
+
+    .contact-link {}
+
+    /* ========== Button ========== */
+
+    button {}
+
+    .btn {}
+
+    .btn:hover {}
+
+    .btn:focus {}
+
+    .btn:active {}
+
+    /* ========== Sidebar ========== */
+
+    .sidebar-container {}
+
+    .social-container {}
+
+    /* ======================
+      5. MEDIA, IMAGES & ICONS
+  ====================== */
+
+    /* ========== Media ========== */
+
+    /* ========== Images ========== */
+
+    .image {}
+
+    /* ========== Icons ========== */
+
+    .large-icon {}
+
+    .icon-box {}
+
+    .tool-icon-container {}
+
+    .social-icon,
+    .tool-icon {}
+
+    .tool-icon:hover,
+    .social-icon:hover {}
+
+    .tool-box .icon-box:hover>.tool-info,
+    .social-container .icon-box:hover>.link-info {}
+
+    /* ======================
+      5. UTILITES
+  ====================== */
+
+    .hidden {}
+
+    /* ========== Tooltip ========== */
+
+    .tool-info,
+    .link-info {}
+
+    .tool-info {}
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    /* ========== Body ========== */
+
+    body {}
+
+    /* ========== Section ========== */
+
+    section {}
+
+    /* ========== List ========== */
+
+    ol,
+    ul {}
+
+    li {}
+
+    /* ======================
+      2. TYPOGRAPHY
+  ====================== */
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {}
+
+    h1 {}
+
+    h2 {}
+
+    h3 {}
+
+    a {}
+
+    /* ======================
+      3. LAYOUT
+  ====================== */
+
+    /* ========== Layout (Grid-based) ========== */
+
+    .layout {}
+
+    .main {}
+
+    .sidebar {}
+
+    /* ========== Header & Navigation layout ========== */
+
+    .header-layout {}
+
+    .main-navigation {}
+
+    .nav-tab {}
+
+    .nav-tab.active {}
+
+    /* ========== Content Layout ========== */
+
+    .container-layout {}
+
+    .container {}
+
+    .box {}
+
+    /* ========== Card ========== */
+
+    .card-container {}
+
+    .card {}
+
+    .card-body {}
+
+    .card:hover {}
+
+    .card:hover>.card-body {}
+
+    /* ========== Link ========== */
+
+    .contact-link {}
+
+    /* ========== Button ========== */
+
+    button {}
+
+    .btn {}
+
+    .btn:hover {}
+
+    .btn:focus {}
+
+    .btn:active {}
+
+    /* ========== Sidebar ========== */
+
+    .sidebar-container {}
+
+    .social-container {}
+
+    /* ======================
+      5. MEDIA, IMAGES & ICONS
+  ====================== */
+
+    /* ========== Media ========== */
+
+    /* ========== Images ========== */
+
+    .image {}
+
+    /* ========== Icons ========== */
+
+    .large-icon {}
+
+    .icon-box {}
+
+    .tool-icon-container {}
+
+    .social-icon,
+    .tool-icon {}
+
+    .tool-icon:hover,
+    .social-icon:hover {}
+
+    .tool-box .icon-box:hover>.tool-info,
+    .social-container .icon-box:hover>.link-info {}
+
+    /* ======================
+      5. UTILITES
+  ====================== */
+
+    .hidden {}
+}

@@ -1,14 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Social Media Application</title>
 </head>
+
 <body>
-    <header></header>
+    <header class="d-flex mb-3">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg">
+                <a href="/index.html" class="navbar-brand me-auto p-2"><img src="/public/assets/image-1.png"
+                        class="image-small" /> Release your anger</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse me-auto p-2">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Page search" aria-label="Search" />
+                        <button class="btn btn-sm btn-outline-secondary" type="submit">Search</button>
+                    </form>
+                </div>
+        </div>
+        </nav>
+    </header>
     <script type="module" src="/src/javascript/main.js"></script>
     <script src="/src/javascript/head.js"></script>
 </body>
+
 </html>
