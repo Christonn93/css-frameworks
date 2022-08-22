@@ -22,9 +22,8 @@
  // Adding link tags inside header on each page
  const loadingFonts = (type) => {
   const link = document.createElement("link");
-  link.href = type.url + type.fam + type.display;
   link.rel = "stylesheet";
-  link.type = "text/css";
+  link.href = type.url + type.fam + type.display;
   document.head.appendChild(link);
  };
 
