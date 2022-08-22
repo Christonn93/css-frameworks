@@ -8,7 +8,7 @@ export function generateHeader() {
  brandContainer.classList.add("header-layout");
  const brandLabel = document.createElement("label");
  brandLabel.classList.add("brand-name");
- brandLabel.innerHTML = `<a href="/index.html" class="nav-link"><img src="../public/assets/image-1.png" class="image-small"/> &ensp;Release you anger</a>`;
+ brandLabel.innerHTML = `<a href="/index.html" class="nav-link"><img src="../public/assets/image-1.png" class="image-small"/>Release you anger</a>`;
 
  // Hamburger dropdown menu for mobile view
  const burger = document.createElement("div");
