@@ -5,15 +5,15 @@ Author: Christopher Tønnesland
 
 Style list:
 
-1. Global style
+1. GLOBAL STYLE
 
-2. Typography
+2. TYPOGRAPHY
 
-3. Layout Classes 
+3. FEEDBACK HANDLING
    
-4. 
+4.  LAYOUT
 
-5. 
+5. UTILITIES
 
 6. Media Queries 
    
@@ -55,6 +55,20 @@ Style list:
     --link-clr: ;
 
     --main-bg-clr: ;
+
+    /* ===  Feedback handling ===  */
+    --clr-prim: hsla(195, 100%, 40%, 0.35);
+    --prim-bor: var(--border) #0099cc;
+
+    --clr-warn: hsla(32, 100%, 50%, 0.35);
+    --warn-bor: var(--border) #ff8800;
+
+    --clr-err: hsla(0, 100%, 40%, 0.35);
+    --err-bor: var(--border) #cc0000;
+
+    --clr-ok: hsla(144, 100%, 25%, 0.35);
+    --ok-bor: var(--border) #007e33;
+
 }
 
 *,
@@ -75,8 +89,14 @@ Style list:
 /* ========== Body ========== */
 
 body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+
+    height: 100vh;
     margin: 0;
     padding: 0;
+
+
     color: var(--text-clr);
     font-size: var(--fontSize-default);
     font-family: var(--font-heading);
@@ -89,7 +109,6 @@ section {
     justify-content: space-around;
     gap: 25px;
 
-    border: 2px solid pink;
     padding: 1.75rem;
 }
 
@@ -155,148 +174,163 @@ a {
 }
 
 /* ======================
-      3. LAYOUT
+    3. FEEDBACK HANDLING
+====================== */
+
+.feedback-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex: 1;
+    align-content: center;
+
+    margin: 10px auto;
+    padding: var(--padding);
+
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5),
+    0 0px 10px rgba(0, 0, 0, 0.8);
+}
+
+.alert {
+    border: var(--prim-bor);
+    background-color: var(--clr-prim);
+}
+
+.warning {
+    border: var(--warn-bor);
+    background-color: var(--clr-warn);
+}
+
+.error {
+    border: var(--err-bor);
+    background-color: var(--clr-err);
+}
+
+.success {
+    border: var(--ok-bor);
+    background-color: var(--clr-ok);
+}
+
+/* ======================
+      4. LAYOUT
   ====================== */
-
-/* ========== Layout (Grid-based) ========== */
-
-.layout {
-    display: grid;
-    grid-template-columns: 5% 95%;
-
-    width: 100%;
-    height: 100vh;
-}
-
-.main {
-    order: 2;
-}
-
-.sidebar {
-    order: 1;
-}
 
 /* ========== Header & Navigation layout ========== */
 
+.page-header {
+    padding: 15px;
+    width: 100%;
+}
+
 .header-layout {
     display: flex;
-
-    width: 100%;
-    background-color: var(--main-bg-clr);
-
-    border-bottom: 0.5px solid black;
 }
 
-.main-navigation {
+.brand-name {
     display: flex;
 }
 
-.nav-tab {
-    color: #ffffff;
-    padding: 10px;
-    background-color: #636363;
-    text-decoration: none;
-    padding: 10px 20px;
-
-    border-right: 0.25px solid black;
-}
-
-.nav-tab.active {
-    color: #26a66a;
-    background-color: rgb(37 37 37);
-}
-
-/* ========== Content Layout ========== */
-
-.container-layout {
-    background-color: #333333;
-
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    align-self: left;
-    gap: 30px;
-    padding: 25px;
-
-    border: 2px solid orange;
-}
-
-.box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 0.75rem;
-    padding: 25px;
-    background-color: #636363;
-    box-shadow: var(--box-shadow);
-    width: max-content;
-    margin: 0 auto;
-}
-
-/* ========== Card ========== */
-
-.card-container {
-    display: flex;
+nav {
+    display: inline-flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    gap: 15px;
-    width: 100%;
+    justify-content: flex-end;
+    flex: 1;
+    gap: 5px;
 }
 
-.card {
-    position: relative;
-    height: 250px;
-    min-width: 200px;
-    max-width: 250px;
-    flex: 1;
-    box-shadow: var(--box-shadow);
-    border-radius: 0.75rem;
+#nav-link-3 {
+    display: none;
+}
+
+.nav-link {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+
+    padding: 0.5rem 1rem;
+    margin: 0;
+
+    font-family: var(--ff-btn-link);
+    color: var(--para-clr);
+
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
     cursor: pointer;
 
-    /* Bg image */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top;
-
-    transition: transform 0.1s;
-    transform-style: preserve-3d;
+    transition: background 250ms ease-in-out,
+        transform 150ms ease;
 }
 
-.card-body {
-    position: absolute;
+.nav-link:hover {
+    border: 1px solid var(--border-clr);
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5),
+        0 0px 10px rgba(0, 0, 0, 0.8);
+}
+
+.active-link {
+    border: 1px solid var(--border-clr);
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5),
+        0 0px 10px rgba(0, 0, 0, 0.8);
+}
+
+.hamburger {
     display: none;
-    flex-direction: column;
+    justify-content: center;
+    align-content: center;
 
+    padding: 0.5rem 1rem;
+    margin: 0;
+
+    color: var(--para-clr);
+
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    cursor: pointer;
+
+    transition: background 250ms ease-in-out,
+        transform 150ms ease;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--copy-clr);
+}
+
+.skip-nav {
+    display: block;
     position: absolute;
-    width: 100%;
-    padding: 15px;
-
-    background-color: #858585a2;
-    box-shadow: var(--box-shadow-2);
-    transform: rotateY(180deg);
-    border-radius: 0.75rem;
-    cursor: default;
+    transform: translateY(-120px);
+    transition: 360ms ease-in;
+    background-color: black;
+    color: #EF3D34;
+    padding: .72rem;
+    width: fit-content;
+    height: fit-content;
+    border-radius: .25rem;
+    text-align: center;
 }
 
-.card:hover {
-    transform: rotateY(180deg);
-    transition: transform 2s;
+.skip-nav:hover {
+    background-color: black;
+    color: red;
+    padding: .72rem;
+    width: fit-content;
+    height: fit-content;
+    border-radius: .25rem;
+    text-align: center;
 }
 
-.card:hover>.card-body {
-    height: 100%;
-    background-color: #333333;
-    display: flex;
-}
-
-/* ========== Link ========== */
-
-.contact-link {
-    color: var(--sec-clr);
+.skip-nav:focus {
+    transform: translateY(0px);
 }
 
 /* ========== Button ========== */
@@ -334,13 +368,11 @@ button {
     box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5), 0 0px 10px rgba(0, 0, 0, 0.8);
     outline: 0.5px solid var(--border-clr);
     outline-offset: -1px;
-    color: #d992e2;
 }
 
 .btn:focus {
     outline: inset 1px solid var(--border-clr);
     outline-offset: -1px;
-    color: #d992e2;
 }
 
 .btn:active {
@@ -348,23 +380,6 @@ button {
 }
 
 /* ========== Sidebar ========== */
-
-.sidebar-container {
-    background-color: #858585;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    position: relative;
-}
-
-.social-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-    position: fixed;
-    top: 55px;
-}
 
 /* ======================
       5. MEDIA, IMAGES & ICONS
@@ -374,82 +389,20 @@ button {
 
 /* ========== Images ========== */
 
-.image {
-    max-width: 660px;
-    max-height: 677px;
-    mix-blend-mode: lighten;
+.image-small {
+    width: 50px;
 }
 
 /* ========== Icons ========== */
 
-.large-icon {
-    width: 165px;
-    height: 165px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-}
-
-.icon-box {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    width: fit-content;
-}
-
-.tool-icon-container {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.social-icon,
-.tool-icon {
-    font-size: var(--fontSize-medium);
-    color: var(--sec-clr);
-    filter: drop-shadow(1px 2px 0px rgba(0, 0, 0, 0.8));
-}
-
-.tool-icon:hover,
-.social-icon:hover {
-    filter: drop-shadow(1px 1px 0px #78dce8);
-}
-
-.tool-box .icon-box:hover>.tool-info,
-.social-container .icon-box:hover>.link-info {
-    visibility: visible;
-}
-
 /* ======================
-      5. UTILITES
+      5. UTILITIES
   ====================== */
+
+/* ========== re usable ========== */
 
 .hidden {
     display: none;
-}
-
-/* ========== Tooltip ========== */
-
-.tool-info,
-.link-info {
-    position: absolute;
-    top: 10px;
-    left: 60px;
-    min-width: 150px;
-    display: flex;
-    justify-content: center;
-    width: fit-content;
-    background-color: #333333;
-    padding: 10px;
-    font-size: 14px;
-    visibility: hidden;
-    border-radius: 0.75rem;
-
-    box-shadow: var(--box-shadow);
-}
-
-.tool-info {
-    top: 65px;
-    min-width: 130px;
-    text-transform: uppercase;
 }
 
 /* ======================
