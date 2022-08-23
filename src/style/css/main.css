@@ -185,6 +185,17 @@ a {
 
 /* ========== Header & Navigation layout ========== */
 
+header,
+footer {
+    background-color: var(--clr-prim);
+    width: 100%;
+    padding: 20px;
+}
+
+footer {
+    height: 150px;
+}
+
 .skip-nav {
     display: block;
     position: absolute;
@@ -211,6 +222,11 @@ a {
 
 .skip-nav:focus {
     transform: translateY(0px);
+}
+
+.nav-link {
+    color: black;
+    font-size: var(--fontSize-small);
 }
 
 /* ========== Button ========== */
