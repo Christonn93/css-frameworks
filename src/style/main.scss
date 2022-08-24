@@ -1,11 +1,69 @@
 // main.scss
-$primary: #2b1313;
-$danger: rgb(210, 108, 19);
 
+// Colors
+$blue:    #0d6efd;
+$dark-blue: #1a2e4c;
+$light: #22699f;
+$light-gray: #dfe6e939;
+
+// Base colors variable
+$primary: $dark-blue;
+$primary-light: $light;
+$secondary: $dark-blue;
+$success: $dark-blue;
+$info: $dark-blue;
+$warning: $dark-blue;
+$danger: $dark-blue;
+$light: $light-gray;
+$dark: $dark-blue;
+
+// Shadows
+$shadow: 0px 0px 10px rgba(0, 0, 0, 0.5), 0px 0px 10px rgba(0, 0, 0, 0.8);
+
+// Navbar colors
+$navbar-dark-color: #000000;
+$navbar-dark-hover-color: #000;
+$navbar-dark-active-color: #222;
+
+// Theme colors
 $theme-colors: (
-  "primary": $primary,
-  "danger": $danger
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
 );
+
+// Fonts & size
+$display-font-sizes: (
+  1: 5rem,
+  2: 4.5rem,
+  3: 4rem,
+  4: 3.5rem,
+  5: 3rem,
+  6: 2.5rem
+);
+
+// Custom margin & padding
+.custom-margin-bottom {
+  margin-bottom: 20px;
+}
+
+// Container adjustments
+.container-fluid {
+  gap: 15px;
+}
+
+// Flex adjustments
+.d-flex {
+  gap: 25px;
+}
+
+// Card customize 
+$card-box-shadow: $shadow;
 
 // Custom styling of elements 
 :root {
@@ -17,27 +75,12 @@ $theme-colors: (
   --fontSize-large: clamp(38px, 4vw, 55px);
   --fontSize-x-large: clamp(50px, 5vw, 68px);
 
-  /* === Root font === */
-  --font-heading: ;
-  --font-body: ;
-  --font-button: ;
-  --font-link: ;
-
   /* === Shadows === */
   --box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5), 0px 0px 10px rgba(0, 0, 0, 0.8);
   --box-shadow-2: 0px 4px 10px 2px rgba(0, 0, 0, 0.5),
       0px 4px 10px 0px rgba(0, 0, 0, 0.8);
   --text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
       0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-  /* === Colors === */
-  --main-clr: #011335;
-  --sec-clr: #133501;
-
-  --text-clr: ;
-  --link-clr: ;
-
-  --main-bg-clr: ;
 
   /* ===  Feedback handling ===  */
   --clr-prim: hsla(195, 100%, 40%, 0.35);
@@ -51,7 +94,6 @@ $theme-colors: (
 
   --clr-ok: hsla(144, 100%, 25%, 0.35);
   --ok-bor: var(--border) #007e33;
-
 }
 
 *,
@@ -72,66 +114,97 @@ body {
   height: 100vh;
   margin: 0;
   padding: 0;
+}
 
+header {
+  background-color: $blue;
+}
 
-  color: var(--text-clr);
-  font-size: var(--fontSize-default);
-  font-family: var(--font-heading);
+main {
+  margin: 30px;
+}
+
+footer {
+  background-color: $blue;
+}
+
+/* ======================
+        HTML ELEMENTS
+  ====================== */
+form {
+  gap: 20px;
 }
 
 /* ======================
         TYPOGRAPHY
   ====================== */
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-      font-family: var(--font-heading);
-      color: var(--main-clr);
-      margin: 0;
-      padding: 0;
-  }
-  
-  h1 {
-      font-size: var(--fontSize-x-large);
-  }
-  
-  h2 {
-      font-size: var(--fontSize-large);
-  }
-  
-  h3 {
-      font-size: var(--fontSize-medium);
-  }
-  
-  a {
-      cursor: pointer;
-      text-decoration: none;
-  }
-
 /* ======================
         CUSTOM CLASSES
   ====================== */
 
-.c-flex {
+.logo {
+  width: 35px;
+}
+
+
+.custom-flex {
   justify-content: space-between;
   align-items: center;
 }
 
-.custom-container {
-  padding: 20px;
-  border: 1px solid black;
+// Log in form
+.container-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
+.login-form {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 2px;
+  padding: 30px;
+}
 
+.login-form-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px;
+}
 
+.login-form-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px;
+  background-color: $primary-light;
+}
 
+// Feed content
+.feed-container,
+.feed-container-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
 
+.feed-content {
+  padding: 10px;
+}
 
+.image-small {
+  margin-bottom: 10px;
+  width: 100px;
+}
 
+.hidden {
+  display: none;
+}
 
 // Include any default variable overrides here (though functions won't be available)
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
