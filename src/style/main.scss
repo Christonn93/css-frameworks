@@ -1,29 +1,15 @@
 // main.scss
 
-// Colors
-$blue:    #0d6efd;
-$dark-blue: #1a2e4c;
-$light: #22699f;
-$light-gray: #dfe6e939;
-
 // Base colors variable
-$primary: $dark-blue;
-$primary-light: $light;
-$secondary: $dark-blue;
-$success: $dark-blue;
-$info: $dark-blue;
-$warning: $dark-blue;
-$danger: $dark-blue;
-$light: $light-gray;
-$dark: $dark-blue;
-
-// Shadows
-$shadow: 0px 0px 10px rgba(0, 0, 0, 0.5), 0px 0px 10px rgba(0, 0, 0, 0.8);
-
-// Navbar colors
-$navbar-dark-color: #000000;
-$navbar-dark-hover-color: #000;
-$navbar-dark-active-color: #222;
+$primary: #313843;
+$primary-light: #707e96;
+$secondary: #987f62;
+$success: #15ff22;
+$info: #1aa6f7;
+$warning: #cd4506;
+$danger: #ff0019;
+$link-color: white;
+$navbar-brand-color: white;
 
 // Theme colors
 $theme-colors: (
@@ -32,68 +18,22 @@ $theme-colors: (
   "success":    $success,
   "info":       $info,
   "warning":    $warning,
-  "danger":     $danger,
-  "light":      $light,
-  "dark":       $dark
+  "danger":     $danger
 );
 
-// Fonts & size
-$display-font-sizes: (
-  1: 5rem,
-  2: 4.5rem,
-  3: 4rem,
-  4: 3.5rem,
-  5: 3rem,
-  6: 2.5rem
-);
-
-// Custom margin & padding
-.custom-margin-bottom {
-  margin-bottom: 20px;
-}
+// Custom gap
+$gap-10: 10px;
+$gap-15: 15px;
+$gap-20: 20px;
 
 // Container adjustments
 .container-fluid {
-  gap: 15px;
+  gap: $gap-15;
 }
 
 // Flex adjustments
 .d-flex {
-  gap: 25px;
-}
-
-// Card customize 
-$card-box-shadow: $shadow;
-
-// Custom styling of elements 
-:root {
-  /* === Root font sizing === */
-  --fontSize-default: clamp(16px, 2vw, 24px);
-  --fontSize-x-small: clamp(14px, 1vw, 18px);
-  --fontSize-small: clamp(12px, 1.5vw, 18px);
-  --fontSize-medium: clamp(24px, 3vw, 36px);
-  --fontSize-large: clamp(38px, 4vw, 55px);
-  --fontSize-x-large: clamp(50px, 5vw, 68px);
-
-  /* === Shadows === */
-  --box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5), 0px 0px 10px rgba(0, 0, 0, 0.8);
-  --box-shadow-2: 0px 4px 10px 2px rgba(0, 0, 0, 0.5),
-      0px 4px 10px 0px rgba(0, 0, 0, 0.8);
-  --text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
-      0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-  /* ===  Feedback handling ===  */
-  --clr-prim: hsla(195, 100%, 40%, 0.35);
-  --prim-bor: var(--border) #0099cc;
-
-  --clr-warn: hsla(32, 100%, 50%, 0.35);
-  --warn-bor: var(--border) #ff8800;
-
-  --clr-err: hsla(0, 100%, 40%, 0.35);
-  --err-bor: var(--border) #cc0000;
-
-  --clr-ok: hsla(144, 100%, 25%, 0.35);
-  --ok-bor: var(--border) #007e33;
+  gap: $gap-20;
 }
 
 *,
@@ -117,22 +57,18 @@ body {
 }
 
 header {
-  background-color: $blue;
-}
-
-main {
-  margin: 30px;
+  background-color: $primary;
 }
 
 footer {
-  background-color: $blue;
+  background-color: $primary;
 }
 
 /* ======================
         HTML ELEMENTS
   ====================== */
 form {
-  gap: 20px;
+  gap: $gap-20;
 }
 
 /* ======================
@@ -158,7 +94,6 @@ form {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
   height: 100%;
 }
 
@@ -167,21 +102,18 @@ form {
   width: 100%;
   flex-wrap: wrap;
   gap: 2px;
-  padding: 30px;
 }
 
 .login-form-left {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: 30px;
+  gap: $gap-20;
 }
 
 .login-form-right {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: 30px;
+  gap: $gap-20;
   background-color: $primary-light;
 }
 
@@ -190,15 +122,10 @@ form {
 .feed-container-2 {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-}
-
-.feed-content {
-  padding: 10px;
+  gap: $gap-15;
 }
 
 .image-small {
-  margin-bottom: 10px;
   width: 100px;
 }
 

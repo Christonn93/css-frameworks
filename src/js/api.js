@@ -15,7 +15,7 @@ fetch("/src/js/post.json")
                           <div class="card-body me-2">
                             <div class="row">
                             <div class="col-2">
-                                <img src="${e.image}" class="img-thumbnail image-small" />
+                                <img src="${e.image}" class="img-thumbnail image-small mb-2" />
                                 <h6 class="card-title">${e.user}</h6>
                                 <p class="card-subtitle mb-2 text-muted">${e.date} - ${e.time}</p>
                                 </div>
