@@ -118,7 +118,6 @@ h5,
 h6 {
     font-family: var(--font-heading);
     color: var(--main-clr);
-    text-shadow: var(--text-shadow);
     margin: 0;
     padding: 0;
 }
@@ -192,6 +191,10 @@ footer {
     padding: 20px;
 }
 
+main {
+    margin: 30px auto;
+}
+
 footer {
     height: 150px;
 }
@@ -229,9 +232,9 @@ footer {
     font-size: var(--fontSize-small);
 }
 
-/* ========== Button ========== */
-
-/* ========== Sidebar ========== */
+.feed-form {
+    width: 100%;
+}
 
 /* ======================
       5. MEDIA, IMAGES & ICONS
