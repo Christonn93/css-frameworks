@@ -1,15 +1,29 @@
 // main.scss
 
+// Base colors hex
+$blackPearl: #020203;
+$stormGray: #7d7e7f;
+$solitude: #f8f9fb;
+$roseBud: #fcb292;
+$burntOrange: #ff6a29;
+$cadillac: #903e56;
+$persianIndigo: #201283;
+$shipCove: #7175a8;
+$jetStream: #c2d7cd;
+$seagull: #68bfc8;
+$irisBlue: #0ea7c2;
+$lime: #00FF00;
+$venetianRed: #E2001A;
+
 // Base colors variable
-$primary: #313843;
-$primary-light: #707e96;
-$secondary: #987f62;
-$success: #15ff22;
-$info: #1aa6f7;
-$warning: #cd4506;
-$danger: #ff0019;
-$link-color: white;
-$navbar-brand-color: white;
+$primary: $irisBlue;
+$secondary: $cadillac;
+$success: $lime;
+$info: $seagull;
+$warning: $burntOrange;
+$danger: $venetianRed;
+$link-color: $solitude;
+$navbar-brand-color: $solitude;
 
 // Theme colors
 $theme-colors: (
@@ -115,7 +129,7 @@ form {
   display: flex;
   flex-direction: column;
   gap: $gap-20;
-  background-color: $primary-light;
+  background-color: $primary;
 }
 
 // Feed content
