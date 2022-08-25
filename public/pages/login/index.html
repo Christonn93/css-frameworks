@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Media Application</title>
+    <script src="https://kit.fontawesome.com/15a08758fb.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="container-fluid custom-container">
+        <div class="d-flex custom-flex">
+            <div class="me-2">
+                <a href="/index.html" class="navbar-brand text-white"><img src="/public/assets/image-1.png" class="logo m-1">Release your anger</a>
+            </div>
+            <div class="me-2">
+                <nav class="navbar nav">
+                    <a href="/index.html" class="nav-link">Home</a>
+                    <a href="/public/pages/login/index.html" class="nav-link">Log in</a>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container-login">
+            <div class="row d-flex login-form p-5">
+                <div class="col border rounded-3 login-form-left p-5">
+                    <div class="login-form-left">
+                        <h3>Register new user</h3>
+                        <form class="d-flex flex-column">
+                            <div class="form-group">
+                                <input type="password" class="form-control" placeholder="Name" value="" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Your Email" value="" />
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" placeholder="Your Password" value="" />
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary" value="Register" />
+                            </div>
+                            <div class="form-group">
+                                <a href="#" class="">Forget Password?</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col border rounded-3 login-form-right p-5">
+                    <div class="login-form-right">
+                        <h3>Log in</h3>
+                        <form class="d-flex flex-column" action="/public/pages/profile/index.html">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Your Email *" value="" />
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" placeholder="Your Password *" value="" />
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary" value="Login" />
+                            </div>
+                            <div class="form-group">
+                                <a href="#" class="">Forget Password?</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+    </footer>
+    <script src="/src/js/head.js"></script>
+</body>
+
+</html>

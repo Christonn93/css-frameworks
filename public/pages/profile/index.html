@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Social Media Application</title>
+  <script src="https://kit.fontawesome.com/15a08758fb.js" crossorigin="anonymous"></script>
+ </head>
+ <body>
+  <header class="container-fluid custom-container">
+    <div class="d-flex custom-flex">
+      <div class="me-2">
+        <a href="/index.html" class="navbar-brand text-white"><img src="/public/assets/image-1.png" class="logo m-1">Release your anger</a>
+      </div>
+      <div class="me-2">
+        <nav class="navbar nav">
+          <a href="/index.html" class="nav-link">Home</a>
+          <a href="/public/pages/login/index.html" class="nav-link">Log in</a>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container mt-4">
+      <div class="d-flex gap-15">
+        <div class="p-2 w-75 card-body border rounded">
+          <div class="d-flex">
+            <div class="p-2 w-25">
+              <p>Profile</p>
+            </div>
+            <div class="p-2 w-75">
+              <div class="container">
+                <div class="feed-container-2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-2 w-25 card-body border rounded">
+          <h4>Contacts</h4>
+          <div class="container border rounded">
+            <div class="contact-list"></div>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+  </main>
+  <footer>
+
+  </footer>
+    <script src="/src/js/head.js"></script>
+    <script src="/src/js/profileFetch.js"></script>
+    <script src="/src/js/contactFetch.js"></script>
+ </body>
+</html>
