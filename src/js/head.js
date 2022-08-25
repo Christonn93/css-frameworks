@@ -44,5 +44,5 @@
 
  // CSS
  styleLinks({
-  url: "/public/style/main.css",
+  url: "/public/style/css/main.css",
  });
