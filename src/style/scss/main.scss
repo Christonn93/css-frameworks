@@ -27,19 +27,21 @@ $gap-15: 15px;
 $gap-20: 20px;
 
 // Container adjustments
-.container-fluid {
+.gap-10 {
+  gap: $gap-10;
+}
+
+.gap-15 {
   gap: $gap-15;
 }
 
-// Flex adjustments
-.d-flex {
+.gap-20 {
   gap: $gap-20;
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
   scroll-behavior: smooth;
 }
 

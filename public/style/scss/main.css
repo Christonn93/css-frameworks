@@ -1,16 +1,19 @@
 @charset "UTF-8";
-.container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm {
+.gap-10 {
+  gap: 10px;
+}
+
+.gap-15 {
   gap: 15px;
 }
 
-.d-flex {
+.gap-20 {
   gap: 20px;
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
   scroll-behavior: smooth;
 }
 
