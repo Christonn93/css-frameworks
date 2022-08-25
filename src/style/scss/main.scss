@@ -133,7 +133,7 @@ form {
 }
 
 // Include any default variable overrides here (though functions won't be available)
-@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "/node_modules/bootstrap/scss/bootstrap.scss";
 
 // Include functions first (so you can manipulate colors, SVGs, calc, etc)
-@import "../../node_modules/bootstrap/scss/functions";
+@import "/node_modules/bootstrap/scss/functions.scss";
