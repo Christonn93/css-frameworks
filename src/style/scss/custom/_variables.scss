@@ -1,0 +1,16 @@
+// Base colors variable
+$dark-primary:  #556680;
+
+// Theme colors
+$theme-colors: (
+    "header-dark": $dark-primary,
+);
+
+
+// Custom gap for flex and grid
+$gap:(
+  "5": 5px,
+  "10": 10px,
+  "15": 15px,
+  "20": 20px,
+)
