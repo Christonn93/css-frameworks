@@ -1,9 +1,10 @@
-/* Error: There is no module with the namespace "variables".
+/* Error: Undefined variable.
  *   ,
- * 4 | @each $name, $gap in variables.$gap {
- *   |                      ^^^^^^^^^^^^^^
+ * 9 | $theme-colors: map-merge($theme-colors, $custom-colors);
+ *   |                          ^^^^^^^^^^^^^
  *   '
- *   src\style\scss\main.scss 4:22  root stylesheet */
+ *   src\style\scss\custom\_variables.scss 9:26  @use
+ *   src\style\scss\main.scss 3:1                root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
@@ -13,5 +14,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: 'Error: There is no module with the namespace "variables".\a   \2577 \a 4 \2502  @each $name, $gap in variables.$gap {\d\a   \2502                       ^^^^^^^^^^^^^^\a   \2575 \a   src\\style\\scss\\main.scss 4:22  root stylesheet';
+  content: "Error: Undefined variable.\a   \2577 \a 9 \2502  $theme-colors: map-merge($theme-colors, $custom-colors);\d\a   \2502                           ^^^^^^^^^^^^^\a   \2575 \a   src\\style\\scss\\custom\\_variables.scss 9:26  @use\a   src\\style\\scss\\main.scss 3:1                root stylesheet";
 }

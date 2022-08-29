@@ -1,4 +1,12 @@
 // main.scss
+// Importing own scss files
+@use "./custom/variables";
+
+// Include any default variable overrides here (though functions won't be available)
+@use "../../../node_modules/bootstrap/scss/bootstrap.scss";
+
+// Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@use "../../../node_modules/bootstrap/scss/functions.scss";
 
 // Custom gap
 @each $name, $gap in variables.$gap {
@@ -30,7 +38,7 @@ body {
         HTML ELEMENTS
   ====================== */
 form {
-  gap: $gap-20;
+  @extend .gap-20;
 }
 
 /* ======================
@@ -68,13 +76,13 @@ form {
 .login-form-left {
   display: flex;
   flex-direction: column;
-  gap: $gap-20;
+  @extend .gap-20;
 }
 
 .login-form-right {
   display: flex;
   flex-direction: column;
-  gap: $gap-20;
+  @extend .gap-20;
 }
 
 // Feed content
@@ -82,7 +90,7 @@ form {
 .feed-container-2 {
   display: flex;
   flex-direction: column;
-  gap: $gap-15;
+  @extend .gap-15;
 }
 
 .image-small {
@@ -92,12 +100,3 @@ form {
 .hidden {
   display: none;
 }
-
-// Include any default variable overrides here (though functions won't be available)
-@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
-
-// Include functions first (so you can manipulate colors, SVGs, calc, etc)
-@import "../../../node_modules/bootstrap/scss/functions.scss";
-
-// Importing own scss files
-@import "./custom/variables"
