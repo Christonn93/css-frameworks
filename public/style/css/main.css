@@ -1,96 +1,4 @@
 @charset "UTF-8";
-.gap-10 {
-  gap: 10px;
-}
-
-.gap-15 {
-  gap: 15px;
-}
-
-.gap-20 {
-  gap: 20px;
-}
-
-*,
-*::before,
-*::after {
-  scroll-behavior: smooth;
-}
-
-/* ======================
-           BODY
-  ====================== */
-body {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-}
-
-/* ======================
-        HTML ELEMENTS
-  ====================== */
-form {
-  gap: 20px;
-}
-
-/* ======================
-        TYPOGRAPHY
-  ====================== */
-/* ======================
-        CUSTOM CLASSES
-  ====================== */
-.logo {
-  width: 35px;
-}
-
-.custom-flex {
-  justify-content: space-between;
-  align-items: center;
-}
-
-.container-login {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
-
-.login-form {
-  display: flex;
-  width: 100%;
-  flex-wrap: wrap;
-  gap: 2px;
-}
-
-.login-form-left {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.login-form-right {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.feed-container,
-.feed-container-2 {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.image-small {
-  width: 100px;
-}
-
-.hidden {
-  display: none;
-}
-
 /*!
  * Bootstrap  v5.2.0 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
@@ -7934,7 +7842,7 @@ textarea.form-control-lg {
   gap: 1.5rem !important;
 }
 
-.gap-5 {
+.gap-5, .login-form {
   gap: 3rem !important;
 }
 
@@ -10849,6 +10757,94 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+}
+.gap-5, .login-form {
+  gap: 5px;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
+.gap-15, .feed-container,
+.feed-container-2 {
+  gap: 15px;
+}
+
+.gap-20, .login-form-right, .login-form-left, form {
+  gap: 20px;
+}
+
+*,
+*::before,
+*::after {
+  scroll-behavior: smooth;
+}
+
+/* ======================
+           BODY
+  ====================== */
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* ======================
+        HTML ELEMENTS
+  ====================== */
+/* ======================
+        TYPOGRAPHY
+  ====================== */
+/* ======================
+        CUSTOM CLASSES
+  ====================== */
+.logo {
+  width: 35px;
+}
+
+.custom-flex {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.login-form {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.login-form-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.feed-container,
+.feed-container-2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-small {
+  width: 100px;
+}
+
+.hidden {
+  display: none;
 }
 
 /*# sourceMappingURL=main.css.map */

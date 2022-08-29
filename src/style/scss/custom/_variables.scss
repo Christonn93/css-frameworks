@@ -1,9 +1,16 @@
+// Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../../../../node_modules/bootstrap/scss/functions.scss";
+
+@import "../../../../node_modules/bootstrap/scss/variables.scss";
+
+@import "../../../../node_modules/bootstrap/scss/mixins.scss";
+
 // Base colors variable
 $dark-primary:  #556680;
 
 // Theme colors
 $custom-colors: (
-    "header-dark": $dark-primary,
+    "dark-primary": $dark-primary,
 );
 
 $theme-colors: map-merge($theme-colors, $custom-colors);

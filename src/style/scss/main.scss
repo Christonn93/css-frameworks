@@ -1,12 +1,12 @@
 // main.scss
+
+
 // Importing own scss files
 @use "./custom/variables";
+@use "./custom/color-variables";
 
 // Include any default variable overrides here (though functions won't be available)
 @use "../../../node_modules/bootstrap/scss/bootstrap.scss";
-
-// Include functions first (so you can manipulate colors, SVGs, calc, etc)
-@use "../../../node_modules/bootstrap/scss/functions.scss";
 
 // Custom gap
 @each $name, $gap in variables.$gap {
