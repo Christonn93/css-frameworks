@@ -2,10 +2,11 @@
 $dark-primary:  #556680;
 
 // Theme colors
-$theme-colors: (
+$custom-colors: (
     "header-dark": $dark-primary,
 );
 
+$theme-colors: map-merge($theme-colors, $custom-colors);
 
 // Custom gap for flex and grid
 $gap:(
