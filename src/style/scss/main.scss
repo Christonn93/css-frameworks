@@ -70,7 +70,7 @@ form {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
-  gap: 2px;
+  @extend .gap-5;
 }
 
 .login-form-left {
