@@ -11,50 +11,50 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg bg-theme">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">Post random</a>
+              <a class="navbar-brand text-theme-text" href="#">Post random</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbar">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-1">
                   <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/">Home</a>
+                    <a class="nav-link text-theme-text" aria-current="page" href="/">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/public/pages/login/index.html">Sign in</a>
+                    <a class="nav-link text-theme-text" aria-current="page" href="/public/pages/login/index.html">Sign in</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link hidden" aria-current="page" href="#">Profile</a>
+                    <a class="nav-link text-theme-text" aria-current="page" href="/public/pages/profile/index.html">Profile</a>
                   </li>
                 </ul>
-                <form class="d-flex" role="search">
+                <form class="d-flex gap-0" role="search">
                   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
+                  <button class="btn btn-outline-theme-btn" type="submit">Search</button>
                 </form>
               </div>
             </div>
           </nav>
     </header>
-    <main class="p-5">
-        <div class="container-fluid">
-            <h1>Homepage</h1>
+    <main class="p-5 bg-theme-bg-main">
+        <div class="container">
+            <h1 class="mb-5">Homepage</h1>
             <div class="col">
-              <form action="" class="card p-1 mb-5">
+              <form action="" class="card p-1 mb-5 bg-theme-bg-sec shadow">
                   <div class="d-flex flex-column gap-15">
                       <div class="">
                           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                         </div>
                       <div class="d-flex justify-content-end">
-                          <button class="btn btn-primary">Post</button>
+                          <button class="btn btn-theme-btn">Post</button>
                       </div>
                   </div>
               </form>
               <div class="d-flex flex-column gap-15" id="postedPosts">
                 <h3>Recently posts</h3>
                 <div class="loader">
-                    <div class="spinner-border text-primary" role="status">
+                    <div class="spinner-border text-theme-text" role="status">
                         <span class="visually-hidden">Loading...</span>
                     </div>
                 </div>
@@ -62,9 +62,15 @@
           </div>
         </div>
     </main>
-    <footer>
-
-    </footer>
+    <footer class="bg-theme">
+      <div class="container-fluid">
+          <div class="d-flex justify-content-evenly p-2">
+              <h5>Post Random</h5>
+              <h5>Post Random</h5>
+              <h5>Post Random</h5>
+          </div>
+      </div>
+  </footer>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/src/js/index.js" type="module"></script>
 </body>

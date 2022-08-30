@@ -18,7 +18,7 @@ export async function getQuotes() {
    const postArea = document.getElementById("postedPosts");
 
    const post = document.createElement("div");
-   post.classList.add("card");
+   post.classList.add("card", "shadow");
 
    post.innerHTML = `
    <div class="card-body d-flex flex-column">
@@ -45,7 +45,7 @@ export async function getQuotes() {
     const listItem = document.createElement("li");
     listItem.classList.add("list-group-item");
 
-    listItem.innerHTML = `<div class="d-flex justify-content-between align-items-center gap-10"><span>${e.author}</span><button class="btn btn-primary">Message</button></div>`;
+    listItem.innerHTML = `<div class="d-flex justify-content-between align-items-center gap-10"><span>${e.author}</span><button class="btn btn-theme-btn">Message</button></div>`;
 
     contactList.append(listItem);
    });
