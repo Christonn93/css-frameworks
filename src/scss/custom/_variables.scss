@@ -40,6 +40,10 @@ $theme-colors: (
 
 $theme-colors: map-merge($theme-colors, $custom-colors);
 
+// Changes to button 
+$border-radius: .75rem;
+
+// Custom gap
 $gap:(
   "5": 5px,
   "10": 10px,
@@ -47,5 +51,10 @@ $gap:(
   "20": 20px,
 );
 
-@import "../../../node_modules/bootstrap/scss/bootstrap";
+#postCategory::first-letter {
+  text-transform:capitalize;
+}
+
 @import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/mixins";
+@import "../../../node_modules/bootstrap/scss/variables";
