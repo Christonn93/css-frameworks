@@ -1,51 +1,5 @@
 @use "./custom/variables";
 
-$theme-main: #08517e;
-$theme-secondary: #ffa500;
-$theme-bg-one: #b4cad8;
-$theme-bg-two: #5285a4;
-
-// Changing bootstrap colors
-$primary:       #00ff4c;
-$secondary:     #505059;
-$success:       #0c8410;
-$info:          #0dcaf0;
-$warning:       #ffc107;
-$danger:        #dc3545;
-$light:         #f8f9fa;
-$dark:          #212529;
-$theme:         $theme-main;
-$theme-text:    $theme-secondary;
-$theme-border:  $theme-secondary;
-$theme-btn:     $theme-secondary;
-
-$custom-colors: (
-  "theme": $theme,
-  "theme-bg-main": $theme-bg-one,
-  "theme-bg-sec": $theme-bg-two,
-  "theme-text": $theme-text,
-  "theme-border": $theme-border,
-  "theme-btn": $theme-btn,
-);
-
-$theme-colors: (
-  "primary":    $primary,
-  "secondary":  $secondary,
-  "success":    $success,
-  "info":       $info,
-  "warning":    $warning,
-  "danger":     $danger,
-  "light":      $light,
-  "dark":       $dark
-);
-
-$theme-colors: map-merge($theme-colors, $custom-colors);
-
-.nav-link {
-    border: 1px solid $theme-border; 
-    border-radius: 0.75rem;
-}
-
 // Including bootstrap
 @import "../../node_modules/bootstrap/scss/bootstrap";
 @import "../../node_modules/bootstrap/scss/functions";
@@ -96,39 +50,7 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   .logo {
     width: 35px;
   }
-  
-  .custom-flex {
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  // Log in form
-  .container-login {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-  }
-  
-  .login-form {
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-    @extend .gap-5;
-  }
-  
-  .login-form-left {
-    display: flex;
-    flex-direction: column;
-    @extend .gap-20;
-  }
-  
-  .login-form-right {
-    display: flex;
-    flex-direction: column;
-    @extend .gap-20;
-  }
-  
+
   // Feed content
   .feed-container,
   .feed-container-2 {
@@ -140,10 +62,6 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   #postCategory::first-letter {
     text-transform:capitalize;
 }
-
-  .hidden {
-    display: none;
-  }
 
   .container-border {
    border: 1px solid black;
