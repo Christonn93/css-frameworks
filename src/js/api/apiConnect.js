@@ -34,6 +34,9 @@ export async function getQuotes() {
    postArea.append(post);
   });
 
+  const loader = document.querySelector(".loader")
+  loader.style.display = "none"
+
   if (contactList) {
    response.forEach((e) => {
     // Posting contacts
@@ -48,8 +51,8 @@ export async function getQuotes() {
    });
   }
 
-  const loader = document.querySelector(".loader")
-  loader.style.display = "none"
+  const loader2 = document.querySelector(".loader")
+  loader2.style.display = "none"
 
   return response;
  } catch (err) {
