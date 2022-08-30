@@ -49,7 +49,7 @@ export async function getQuotes() {
   }
 
   const loader = document.querySelector(".loader")
-  loader.style = "display: none;"
+  loader.style.display = "none"
 
   return response;
  } catch (err) {
