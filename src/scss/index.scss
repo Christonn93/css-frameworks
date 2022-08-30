@@ -1,0 +1,125 @@
+@use "./custom/variables";
+
+// Changing bootstrap colors
+$primary: #ffa500;
+$success: #ee82ee;
+
+.navbar-nav {
+    gap: 10px;
+}
+
+.nav-link {
+    border: 1px solid orange; 
+    border-radius: 0.75rem;
+}
+
+// Including bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/bootstrap/scss/functions";
+
+// Then add additional custom code here
+
+// Custom gap
+@each $name, $gap in variables.$gap {
+    .gap-#{$name}{
+      gap: $gap;
+    }
+  } 
+  
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: smooth;
+  }
+  
+  /* ======================
+             BODY
+    ====================== */
+  
+  body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* ======================
+          HTML ELEMENTS
+    ====================== */
+  form {
+    @extend .gap-20;
+  }
+  
+  /* ======================
+          TYPOGRAPHY
+    ====================== */
+  
+  /* ======================
+          CUSTOM CLASSES
+    ====================== */
+  
+  .logo {
+    width: 35px;
+  }
+  
+  .custom-flex {
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  // Log in form
+  .container-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  .login-form {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    @extend .gap-5;
+  }
+  
+  .login-form-left {
+    display: flex;
+    flex-direction: column;
+    @extend .gap-20;
+  }
+  
+  .login-form-right {
+    display: flex;
+    flex-direction: column;
+    @extend .gap-20;
+  }
+  
+  // Feed content
+  .feed-container,
+  .feed-container-2 {
+    display: flex;
+    flex-direction: column;
+    @extend .gap-15;
+  }
+
+  #postCategory::first-letter {
+    text-transform:capitalize;
+}
+
+  .hidden {
+    display: none;
+  }
+
+  .container-border {
+   border: 1px solid black;
+  }
+
+  .img-sm {
+    width: 200px;
+  }
+
+  .btn-sm {
+    width: 50px;
+  }
