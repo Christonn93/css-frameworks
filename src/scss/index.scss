@@ -46,49 +46,24 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 // Changes to button 
 $border-radius: .75rem;
 
-
 // Including bootstrap
 @import "../../node_modules/bootstrap/scss/bootstrap";
+
 // Then add additional custom code here
+*,
+*::before,
+*::after {
+  scroll-behavior: smooth;
+}
 
 // Custom gap
 @each $name, $gap in variables.$gap {
-    .gap-#{$name}{
-      gap: $gap;
-    }
-  } 
-  
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: smooth;
+  .gap-#{$name}{
+    gap: $gap;
   }
-  
-  /* ======================
-             BODY
-    ====================== */
-  
-  body {
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-  
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* ======================
-          HTML ELEMENTS
-    ====================== */
-  form {
-    @extend .gap-20;
-  }
-  
-  /* ======================
-          TYPOGRAPHY
-    ====================== */
-  
-  /* ======================
-          CUSTOM CLASSES
-    ====================== */
-  
+} 
+
+// Making capitalized letter on return from API 
+#postCategory::first-letter {
+  text-transform:capitalize;
+}

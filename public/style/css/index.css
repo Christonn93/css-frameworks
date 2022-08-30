@@ -1,8 +1,4 @@
 @charset "UTF-8";
-#postCategory::first-letter {
-  text-transform: capitalize;
-}
-
 /*!
  * Bootstrap  v5.2.0 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
@@ -11278,6 +11274,12 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+*,
+*::before,
+*::after {
+  scroll-behavior: smooth;
+}
+
 .gap-5 {
   gap: 5px;
 }
@@ -11290,35 +11292,12 @@ textarea.form-control-lg {
   gap: 15px;
 }
 
-.gap-20, form {
+.gap-20 {
   gap: 20px;
 }
 
-*,
-*::before,
-*::after {
-  scroll-behavior: smooth;
+#postCategory::first-letter {
+  text-transform: capitalize;
 }
-
-/* ======================
-           BODY
-  ====================== */
-body {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-}
-
-/* ======================
-        HTML ELEMENTS
-  ====================== */
-/* ======================
-        TYPOGRAPHY
-  ====================== */
-/* ======================
-        CUSTOM CLASSES
-  ====================== */
 
 /*# sourceMappingURL=index.css.map */

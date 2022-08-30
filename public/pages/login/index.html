@@ -10,7 +10,7 @@
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
-<body>
+<body class="d-flex flex-column vh-100">
     <header>
         <nav class="navbar navbar-expand-lg bg-theme">
             <div class="container-fluid">
@@ -40,13 +40,13 @@
             </div>
         </nav>
     </header>
-    <main class="p-5 bg-theme-bg-main">
+    <main class="p-5 bg-theme-bg-main flex-fill">
         <div class="container-fluid">
             <div class="container">
                 <h1 class="mb-5">Sign in</h1>
                 <div class="col border rounded-3 login-form-right p-5 mb-5 shadow">
                     <div class="login-form-right">
-                        <form class="d-flex flex-column" action="/public/pages/profile/index.html">
+                        <form class="d-flex flex-column gap-2" action="/public/pages/profile/index.html">
                             <div class="form-group">
                                 <label for="email" class="text-black p-2">Email</label>
                                 <input id="email" type="email" class="form-control" placeholder="Your Email *" value="" />
