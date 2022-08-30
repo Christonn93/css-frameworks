@@ -1,3 +1,5 @@
+@use "../../../node_modules/bootstrap/scss/functions";
+
 // Theme colors
 $theme-main: #08517e;
 $theme-secondary: #FFB224;
@@ -55,6 +57,3 @@ $gap:(
   text-transform:capitalize;
 }
 
-@import "../../../node_modules/bootstrap/scss/functions";
-@import "../../../node_modules/bootstrap/scss/mixins";
-@import "../../../node_modules/bootstrap/scss/variables";
