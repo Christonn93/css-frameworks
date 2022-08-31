@@ -39,49 +39,43 @@
         </nav>
     </header>
     <main class="p-5 bg-theme-bg-main flex-fill">
-        <div class="container-fluid">
-            <h1 class="mb-5">Profile page</h1>
-            <div class="container-fluid mt-5">
+        <div class="container-fluid d-flex">
+            <div class="container-fluid">
+                <h1 class="mb-5">Profile page</h1>
                 <div class="row">
-                    <div class="col-sm-6 col-md-10 p-2">
-                        <div class="container-fluid gap-1">
-                            <div class="row">
-                                <!-- Profile field -->
-                                <div class="col-sm-6 col-md-4 mb-2">
-                                    <div class="card shadow">
-                                        <img src="/public/assets/good-pic.png" alt="" class="card-img-top">
-                                        <div class="card-body">
-                                            <h4 class="card-title">First name / Last name</h4>
-                                            <p class="card-text">Personal information</p>
-                                        </div>
-                                    </div>
+                    <!-- Profile field -->
+                    <div class="col-xl-2 col-md-4 mb-5">
+                        <div class="card shadow">
+                            <img src="/public/assets/good-pic.png" alt="" class="card-img-top">
+                            <div class="card-body">
+                                <h4 class="card-title">First name / Last name</h4>
+                                <p class="card-text">Personal information</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Post field -->
+                    <div class="col-xl-7 col-md-8 mb-5">
+                        <form action="" class="card p-1 mb-5 bg-theme-bg-sec shadow">
+                            <div class="d-flex flex-column gap-15">
+                                    <label for="FormControlTextarea" class="text-theme-text p-2 h3">Make new post</label>
+                                    <textarea class="form-control" id="FormControlTextarea"
+                                        rows="3"></textarea>
+                                <div class="d-flex justify-content-end">
+                                    <button class="btn btn-theme-btn">Post</button>
                                 </div>
-                                <!-- Post field -->
-                                <div class="col-sm-6 col-md-8">
-                                    <form action="" class="card p-1 mb-5 bg-theme-bg-sec shadow">
-                                        <div class="d-flex flex-column gap-15">
-                                                <label for="FormControlTextarea" class="text-theme-text p-2">Make new post</label>
-                                                <textarea class="form-control" id="FormControlTextarea"
-                                                    rows="3"></textarea>
-                                            <div class="d-flex justify-content-end">
-                                                <button class="btn btn-theme-btn">Post</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                    <div class="d-flex flex-column gap-15" id="postedPosts">
-                                        <h3>Recently posts</h3>
-                                        <div class="loader">
-                                            <div class="spinner-border text-theme-text" role="status">
-                                                <span class="visually-hidden">Loading...</span>
-                                            </div>
-                                        </div>
-                                    </div>
+                            </div>
+                        </form>
+                        <div class="d-flex flex-column gap-15" id="postedPosts">
+                            <h3>Recently posts</h3>
+                            <div class="loader">
+                                <div class="spinner-border text-theme-text" role="status">
+                                    <span class="visually-hidden">Loading...</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- Contacts field -->
-                    <div class=" container col-sm-6 col-md-2 p-2">
+                    <div class="col-xl-3 col-md-6 mb-5">
                         <div class="container-fluid">
                             <div class="card shadow">
                                 <div class="card-header">
@@ -92,10 +86,8 @@
                         </div>
                     </div>
                 </div>
-
-            </div>
         </div>
-        </div>
+    </div>
     </main>
     <footer class="bg-theme">
         <div class="container-fluid">
