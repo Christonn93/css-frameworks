@@ -2,81 +2,93 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Social Media Application</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS framework</title>
     <script src="https://kit.fontawesome.com/15a08758fb.js" crossorigin="anonymous"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
-<body>
-    <header class="container-fluid custom-container">
-        <div class="d-flex custom-flex">
-            <div class="me-2">
-                <a href="/index.html" class="navbar-brand text-white"><img src="/public/assets/image-1.png" class="logo m-1">Release your anger</a>
-            </div>
-            <div class="me-2">
-                <nav class="navbar nav">
-                    <a href="/index.html" class="nav-link">Home</a>
-                    <a href="/public/pages/login/index.html" class="nav-link">Log in</a>
-                    <form class="d-flex" role="search">
+<body class="d-flex flex-column vh-100">
+    <header>
+        <nav class="navbar navbar-expand-lg bg-theme">
+            <div class="container-fluid">
+                <a class="navbar-brand text-theme-text" href="/">Post random</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-theme-text" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-theme-text" aria-current="page" href="/public/pages/login/index.html">Sign in</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-theme-text" aria-current="page" href="/public/pages/profile/index.html">Profile</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex gap-0" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                        <button class="btn btn-outline-theme-btn" type="submit">Search</button>
                     </form>
-                </nav>
+                </div>
             </div>
-        </div>
+        </nav>
     </header>
-    <main>
-        <div class="container-login">
-            <div class="row d-flex login-form p-5">
-                <div class="col border rounded-3 login-form-left p-5">
-                    <div class="login-form-left">
-                        <h3>Register new user</h3>
-                        <form class="d-flex flex-column">
-                            <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Name" value="" />
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Your Email" value="" />
-                            </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Your Password" value="" />
-                            </div>
-                            <div class="form-group">
-                                <input type="submit" class="btn btn-primary" value="Register" />
-                            </div>
-                            <div class="form-group">
-                                <a href="#" class="">Forget Password?</a>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="col border rounded-3 login-form-right p-5">
+    <main class="p-5 bg-theme-bg-main flex-fill">
+        <div class="container-fluid">
+            <div class="container">
+                <h1 class="mb-5">Sign in</h1>
+                <div class="col border rounded-3 login-form-right p-5 mb-5 shadow">
                     <div class="login-form-right">
-                        <h3>Log in</h3>
-                        <form class="d-flex flex-column" action="/public/pages/profile/index.html">
+                        <form class="d-flex flex-column gap-2" action="/public/pages/profile/index.html">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Your Email *" value="" />
+                                <label for="email" class="text-black p-2">Email</label>
+                                <input id="email" type="email" class="form-control" placeholder="Your Email *" value="" />
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Your Password *" value="" />
+                                <label for="pw" class="text-black p-2">Password</label>
+                                <input id="pw" type="password" class="form-control" placeholder="Your Password *" value="" />
                             </div>
                             <div class="form-group">
-                                <input type="submit" class="btn btn-primary" value="Login" />
+                                <input type="submit" class="btn btn-theme-btn" value="Login" />
                             </div>
                             <div class="form-group">
-                                <a href="#" class="">Forget Password?</a>
+                                <a href="#" class="text-black">Forget Password?</a>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
+
         </div>
     </main>
-    <footer>
+    <footer class="bg-theme">
+        <div class="container-fluid">
+            <div class="p-2">
+                <div class="container align-items-center">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4">
+                            <h5 class="text-theme-text">Post Random</h5>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <h5 class="text-theme-text">Post Random</h5>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <h5 class="text-theme-text">Post Random</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
-    <script src="/src/js/head.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/src/js/index.js" type="module"></script>
 </body>
 
 </html>

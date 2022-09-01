@@ -1,3 +1,4 @@
+export function createHead(){
 // Meta & links imports for heads on all pages
 
  // Creating description meta on each side
@@ -42,17 +43,9 @@
   document.head.appendChild(link);
  };
 
- // bootstrap
- styleLinks({
-  url: "node_modules/bootstrap/dist/css/bootstrap.min.css",
- });
-
  // CSS
  styleLinks({
-  url: "/src/style/css/main.css",
+  url: "/public/style/css/index.css",
  });
+}
 
- // SCSS
- styleLinks({
-  url: "/src/style/scss/main.scss",
- });

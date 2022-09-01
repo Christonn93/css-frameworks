@@ -1,20 +1,21 @@
 {
-  "name": "css-frameworks",
-  "version": "1.0.0",
+  "name": "css-framework-v.2",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "sass src/style/scss:public/style/css",
-    "watch": "sass --watch src/style:public/style & live-server"
+    "build": "sass src/scss:public/style/css",
+    "watch": "sass --watch src/scss:public/style/css & live-server"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ajax": "^0.0.4",
     "bootstrap": "^5.2.0"
   },
   "devDependencies": {
+    "live-server": "^1.2.2",
     "sass": "^1.54.5"
   }
 }
