@@ -1,4 +1,30 @@
 @charset "UTF-8";
+*,
+*::before,
+*::after {
+  scroll-behavior: smooth;
+}
+
+.gap-5 {
+  gap: 5px;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
+.gap-15 {
+  gap: 15px;
+}
+
+.gap-20 {
+  gap: 20px;
+}
+
+#postCategory::first-letter {
+  text-transform: capitalize;
+}
+
 /*!
  * Bootstrap  v5.2.0 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
@@ -11273,31 +11299,6 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
-}
-*,
-*::before,
-*::after {
-  scroll-behavior: smooth;
-}
-
-.gap-5 {
-  gap: 5px;
-}
-
-.gap-10 {
-  gap: 10px;
-}
-
-.gap-15 {
-  gap: 15px;
-}
-
-.gap-20 {
-  gap: 20px;
-}
-
-#postCategory::first-letter {
-  text-transform: capitalize;
 }
 
 /*# sourceMappingURL=index.css.map */

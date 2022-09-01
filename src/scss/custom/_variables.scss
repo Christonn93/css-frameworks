@@ -1,4 +1,5 @@
-@use "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/functions";
+// Including bootstrap
 
 // Theme colors
 $theme-main: #08517e;
@@ -27,23 +28,30 @@ $custom-colors: (
   "theme-text": $theme-text,
   "theme-border": $theme-border,
   "theme-btn": $theme-btn,
-);
-
-$theme-colors: (
-  "primary":    $primary,
-  "secondary":  $secondary,
-  "success":    $success,
-  "info":       $info,
-  "warning":    $warning,
-  "danger":     $danger,
-  "light":      $light,
-  "dark":       $dark
-);
+  );
+  
+  $theme-colors: (
+    "primary":    $primary,
+    "secondary":  $secondary,
+    "success":    $success,
+    "info":       $info,
+    "warning":    $warning,
+    "danger":     $danger,
+    "light":      $light,
+    "dark":       $dark
+    );
 
 $theme-colors: map-merge($theme-colors, $custom-colors);
 
 // Changes to button 
 $border-radius: .75rem;
+
+*,
+*::before,
+*::after {
+  scroll-behavior: smooth;
+}
+
 
 // Custom gap
 $gap:(
@@ -52,3 +60,16 @@ $gap:(
   "15": 15px,
   "20": 20px,
 );
+
+// Custom gap
+@each $name, $gap in $gap {
+  .gap-#{$name}{
+    gap: $gap;
+  }
+} 
+
+// Making capitalized letter on return from API 
+#postCategory::first-letter {
+  text-transform:capitalize;
+}
+
